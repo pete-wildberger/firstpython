@@ -19,13 +19,14 @@ original = raw_input('Enter a word:')
 
 if len(original) > 0 and original[0] in ('a', 'e', 'i', 'o', 'u') and original.isalpha():
     word = original.lower()
-    first = word[0]
     new_word = word + pyg
-    print "if " + new_word
+    print new_word
 elif len(original) > 0 and original.isalpha():
     word = original.lower()
-    first = word[0]
-    new_word = word[1: len(word)] + first + pyg
-    print "elif " + new_word
+    vowel_indices = [idx for idx, ch in enumerate(original) if ch.lower() in 'aeiou']
+    splitIdx = vowel_indices[0]
+    first = original[0 : splitIdx]
+    new_word = word[splitIdx: len(word)] + first + pyg
+    print new_word
 else:
     print 'empty'
