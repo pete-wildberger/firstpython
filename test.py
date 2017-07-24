@@ -17,6 +17,7 @@ def pigLatin(original):
         print 'empty'
 
 while program_active:
+    print 'Type \'quit\' to exit'
     pyg = 'ay'
 
     sentence = raw_input('Enter a sentence:')
